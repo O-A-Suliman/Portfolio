@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,14 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*h=0^q$tzv!#jghbxwvo&19-$u245zr2=u$t7go@l7=9m#ehet"
+# Read SECRET_KEY from environment for production; fallback kept for local/dev.
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-*h=0^q$tzv!#jghbxwvo&19-$u245zr2=u$t7go@l7=9m#ehet",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# For Vercel deployment keep DEBUG=False. For local debugging set env var if needed.
 DEBUG = False
 
-# استبدل YOUR_USERNAME بـ اسم المستخدم الفعلي في PythonAnywhere
-# استبدل YOUR_DOMAIN.pythonanywhere.com بـ النطاق الفعلي
-ALLOWED_HOSTS = ["Abeer_Elshikh.pythonanywhere.com"]
+# Temporarily allow all hosts (replace with explicit hosts in production)
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -81,6 +87,17 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# If you use an external database, Vercel can provide a DATABASE_URL env var.
+# If present, parse it using dj-database-url (add to requirements.txt).
+if os.environ.get("DATABASE_URL"):
+    try:
+        import dj_database_url
+
+        DATABASES["default"] = dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    except Exception:
+        # dj-database-url not installed; keep default sqlite until installed
+        pass
 
 
 # Password validation
@@ -122,3 +139,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
     BASE_DIR / "Marketer" / "static",
 ]
+
+# Use WhiteNoise to serve static files on Vercel
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

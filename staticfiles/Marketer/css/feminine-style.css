@@ -1,0 +1,1167 @@
+/* ===== Feminine & Elegant Portfolio Design with Flowers ===== */
+
+:root {
+    /* Color Palette - Feminine & Warm */
+    --primary-pink: #d8547e;
+    --light-pink: #f5d5e3;
+    --rose-gold: #e8a5c0;
+    --soft-peach: #fde8e0;
+    --white-cream: #faf7f5;
+    --dark-text: #5a3d4a;
+    --light-text: #8b5a6b;
+    --accent-purple: #d4a5d4;
+    --flower-pink: #ff69b4;
+    --flower-rose: #ff1493;
+    --gradient-1: linear-gradient(135deg, #f5d5e3 0%, #fde8e0 100%);
+    --gradient-2: linear-gradient(135deg, #d8547e 0%, #e8a5c0 100%);
+    --shadow-soft: 0 8px 25px rgba(216, 84, 126, 0.12);
+    --shadow-hover: 0 12px 35px rgba(216, 84, 126, 0.18);
+}
+
+/* ===== Base Styles ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #faf7f5 0%, #fef5f0 100%);
+    color: var(--primary-pink);
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== Decorative Flowers Background ===== */
+
+body::before {
+    content: '🌸';
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 4rem;
+    opacity: 0.08;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+
+body::after {
+    content: '🌹';
+    position: fixed;
+    bottom: 10%;
+    left: 8%;
+    font-size: 3.5rem;
+    opacity: 0.07;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===== Header & Navigation ===== */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(216, 84, 126, 0.08);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--light-pink);
+}
+
+header::before {
+    content: '✿';
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgba(216, 84, 126, 0.15);
+}
+
+header::after {
+    content: '✿';
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: rgba(216, 84, 126, 0.15);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5a3d4a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-2);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover::after,
+nav a.active-link::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active-link {
+    color: var(--primary-pink);
+}
+
+/* ===== Main Content ===== */
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Decorative Flowers in Main ===== */
+
+main::before {
+    content: '🌼';
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-size: 3rem;
+    opacity: 0.06;
+    animation: float 7s ease-in-out infinite;
+}
+
+main::after {
+    content: '💐';
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    font-size: 3.5rem;
+    opacity: 0.07;
+    animation: float 9s ease-in-out infinite;
+}
+
+/* ===== Profile Section ===== */
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.profile-card {
+    background: var(--white-cream);
+    padding: 3.5rem 2.5rem;
+    border-radius: 35px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: visible;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(232, 165, 192, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+.profile-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -30%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212, 165, 212, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ===== Flower Decorations Around Card ===== */
+
+.profile-card .flower-decoration {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: float 5s ease-in-out infinite;
+}
+
+.flower-top-left {
+    top: -15px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.flower-top-right {
+    top: -20px;
+    right: 15px;
+    font-size: 2.2rem;
+    animation-delay: 0.5s;
+}
+
+.flower-bottom-left {
+    bottom: -10px;
+    left: 30px;
+    font-size: 1.8rem;
+    animation-delay: 1s;
+}
+
+.flower-bottom-right {
+    bottom: -15px;
+    right: 20px;
+    font-size: 2.1rem;
+    animation-delay: 0.7s;
+}
+
+/* ===== Image Container ===== */
+
+.img-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+    display: inline-block;
+}
+
+.img-container img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(216, 84, 126, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: var(--gradient-2);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.img-container::after {
+    content: '✿✿✿';
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: rgba(216, 84, 126, 0.3);
+    letter-spacing: 8px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.profile-card:hover .img-container::before {
+    opacity: 0.15;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.profile-card:hover .img-container::after {
+    opacity: 1;
+    bottom: -45px;
+}
+
+.profile-card:hover .img-container img {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(216, 84, 126, 0.3);
+}
+
+/* ===== Headings ===== */
+
+h2 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary-pink);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    z-index: 1;
+    position: relative;
+}
+
+h3 {
+    color: var(--primary-pink);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+}
+
+/* ===== Job Title ===== */
+
+.job-title {
+    color: var(--primary-pink);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: block;
+    background: linear-gradient(90deg, transparent, var(--light-pink), transparent);
+    padding: 0.8rem 0;
+    letter-spacing: 0.3px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ===== Bio Text ===== */
+
+.bio-text {
+    margin-bottom: 2rem;
+    color: var(--primary-pink);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    z-index: 1;
+    position: relative;
+    background: linear-gradient(135deg, rgba(245, 213, 227, 0.3), rgba(253, 232, 224, 0.2));
+    padding: 1.5rem;
+    border-radius: 20px;
+    border-left: 4px solid var(--primary-pink);
+    border-right: 2px dashed rgba(232, 165, 192, 0.3);
+}
+
+/* ===== Contact Area ===== */
+
+.contact-area {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-pink);
+    z-index: 1;
+    position: relative;
+}
+
+.contact-area h3 {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    color: var(--primary-pink);
+    font-size: 0.85rem;
+    background: linear-gradient(180deg, transparent, rgba(245, 213, 227, 0.2));
+    border-top: 2px solid var(--light-pink);
+    margin-top: auto;
+    position: relative;
+}
+
+footer::before {
+    content: '🌼 🌹 🌸 🌷 🌹 🌼';
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.5;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Animations ===== */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.08;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blossomRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Page Load Animation ===== */
+
+.profile-card {
+    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+    body::before {
+        font-size: 3rem;
+        top: 3%;
+        right: 3%;
+    }
+
+    body::after {
+        font-size: 2.5rem;
+        bottom: 8%;
+        left: 5%;
+    }
+
+    header::before,
+    header::after {
+        font-size: 1.2rem;
+    }
+
+    main::before {
+        font-size: 2.2rem;
+        top: 8%;
+    }
+
+    main::after {
+        font-size: 2.5rem;
+        bottom: 12%;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .profile-section {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+    }
+
+    .profile-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 25px;
+    }
+
+    .profile-card::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-card::after {
+        width: 180px;
+        height: 180px;
+    }
+
+    .job-title {
+        font-size: 0.9rem;
+    }
+
+    .bio-text {
+        font-size: 0.85rem;
+        padding: 1rem;
+        line-height: 1.7;
+    }
+
+    .img-container img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .img-container::before {
+        width: 150px;
+        height: 150px;
+    }
+
+    .flower-top-left,
+    .flower-top-right,
+    .flower-bottom-left,
+    .flower-bottom-right {
+        font-size: 1.5rem;
+    }
+
+    footer::before {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body::before {
+        font-size: 2.5rem;
+        top: 2%;
+    }
+
+    body::after {
+        font-size: 2rem;
+        bottom: 5%;
+    }
+
+    header {
+        padding: 0.8rem 0;
+    }
+
+    header::before,
+    header::after {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        font-size: 0.75rem;
+    }
+
+    nav a {
+        padding: 0.3rem 0;
+    }
+
+    main::before {
+        font-size: 1.8rem;
+    }
+
+    main::after {
+        font-size: 2rem;
+    }
+
+    .profile-section {
+        min-height: 60vh;
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-card {
+        padding: 2rem 1rem;
+        border-radius: 20px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin: 0.8rem 0 0.3rem;
+    }
+
+    .job-title {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+
+    .bio-text {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+        margin-bottom: 1.5rem;
+        border-left-width: 3px;
+    }
+
+    .img-container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .img-container::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    .img-container::after {
+        bottom: -28px;
+        letter-spacing: 4px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    footer::before {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-area {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .contact-area h3 {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .flower-decoration {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* ===== Accessibility ===== */
+
+a:focus-visible {
+    outline: 2px solid var(--primary-pink);
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--primary-pink);
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+
+@media print {
+    header,
+    footer {
+        background: white;
+    }
+
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    body::before,
+    body::after,
+    main::before,
+    main::after {
+        display: none;
+    }
+}
+
+
+/* ===== Base Styles ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #faf7f5 0%, #fef5f0 100%);
+    color: var(--primary-pink);
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header & Navigation ===== */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(216, 84, 126, 0.08);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--light-pink);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5a3d4a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-2);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover::after,
+nav a.active-link::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active-link {
+    color: var(--primary-pink);
+}
+
+/* ===== Main Content ===== */
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Profile Section ===== */
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.profile-card {
+    background: var(--white-cream);
+    padding: 3.5rem 2.5rem;
+    border-radius: 35px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(232, 165, 192, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -30%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212, 165, 212, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ===== Image Container ===== */
+
+.img-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+
+.img-container img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(216, 84, 126, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: var(--gradient-2);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.profile-card:hover .img-container::before {
+    opacity: 0.15;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.profile-card:hover .img-container img {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(216, 84, 126, 0.3);
+}
+
+/* ===== Headings ===== */
+
+h2 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary-pink);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    z-index: 1;
+    position: relative;
+}
+
+h3 {
+    color: var(--primary-pink);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+}
+
+/* ===== Job Title ===== */
+
+.job-title {
+    color: var(--primary-pink);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: block;
+    background: linear-gradient(90deg, transparent, var(--light-pink), transparent);
+    padding: 0.8rem 0;
+    letter-spacing: 0.3px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ===== Bio Text ===== */
+
+.bio-text {
+    margin-bottom: 2rem;
+    color: var(--primary-pink);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    z-index: 1;
+    position: relative;
+    background: rgba(245, 213, 227, 0.3);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border-left: 4px solid var(--primary-pink);
+}
+
+/* ===== Contact Area ===== */
+
+.contact-area {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-pink);
+    z-index: 1;
+    position: relative;
+}
+
+.contact-area h3 {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    color: var(--primary-pink);
+    font-size: 0.85rem;
+    background: linear-gradient(180deg, transparent, rgba(245, 213, 227, 0.2));
+    border-top: 2px solid var(--light-pink);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Animations ===== */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.08;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Page Load Animation ===== */
+
+.profile-card {
+    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .profile-section {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+    }
+
+    .profile-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 25px;
+    }
+
+    .profile-card::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-card::after {
+        width: 180px;
+        height: 180px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .job-title {
+        font-size: 0.9rem;
+    }
+
+    .bio-text {
+        font-size: 0.85rem;
+        padding: 1rem;
+        line-height: 1.7;
+    }
+
+    .img-container img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .img-container::before {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 0;
+    }
+
+    nav ul {
+        gap: 1rem;
+        font-size: 0.75rem;
+    }
+
+    nav a {
+        padding: 0.3rem 0;
+    }
+
+    .profile-section {
+        min-height: 60vh;
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-card {
+        padding: 2rem 1rem;
+        border-radius: 20px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin: 0.8rem 0 0.3rem;
+    }
+
+    .job-title {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+
+    .bio-text {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+        margin-bottom: 1.5rem;
+        border-left-width: 3px;
+    }
+
+    .img-container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .img-container::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .contact-area {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .contact-area h3 {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ===== Accessibility ===== */
+
+a:focus-visible {
+    outline: 2px solid var(--primary-pink);
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--primary-pink);
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+
+@media print {
+    header,
+    footer {
+        background: white;
+    }
+
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

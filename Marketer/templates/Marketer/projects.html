@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشاريع | مديرة حملات تسويقية</title>
+    <link rel="stylesheet" href="{% static 'Marketer/css/main.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">الرئيسية</a></li>
+                <li><a href="{% url 'education' %}">التعليم والشهادات</a></li>
+                <li><a href="{% url 'projects' %}" class="active-link">المشاريع</a></li>
+                <li><a href="{% url 'certificates1' %}">الشهادات 1</a></li>
+                <li><a href="{% url 'certificates2' %}">الشهادات 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="profile-header">
+            <h2>المشاريع</h2>
+            
+            <div class="projects-section">
+                <!-- حملة النمو -->
+                <div class="project-item">
+                    <h4>حملة "نمو" – برنامج كورسات مدفوعة</h4>
+                    <p class="year">2023</p>
+                    <p>
+                        إدارة حملة تسويقية رقمية لبرنامج كورسات مدفوعة تابع للمؤسسة،
+                        شملت الإعلانات الممولة، استهداف الجمهور المناسب، وتحسين التحويلات
+                        مما ساهم في زيادة التسجيل والاشتراكات.
+                    </p>
+                </div>
+
+                <!-- مدير حملة تسويقية -->
+                <div class="project-item">
+                    <h4>مدير حملة تسويقية – مؤسسة ريان الناظر</h4>
+                    <p class="year">2023</p>
+                    <p>
+                        إدارة وتنفيذ حملة تسويق رقمي متكاملة لمؤسسة ريان الناظر،
+                        شملت التخطيط، التنفيذ، والمتابعة لتحقيق أهداف الانتشار وزيادة التفاعل.
+                    </p>
+                    <a href="https://salla.sa/gifts_eileen7" class="project-link" target="_blank">استكشف المزيد</a>
+                </div>
+
+                <!-- إدارة المشاريع -->
+                <div class="project-item">
+                    <h4>إدارة حملات إعلانية لمنصة CYC</h4>
+                    <p class="year">2023</p>
+                    <p>
+                        إدارة حملات الإعلانات على فيسبوك، تيك توك، وواتساب لمنصة CYC
+                        مع تحسين الأداء وزيادة الوصول للجمهور المستهدف.
+                    </p>
+                    <a href="https://facebook.com/groups/260822079019951/" class="project-link" target="_blank">زيارة المجموعة</a>
+                </div>
+
+                <!-- حملة التوعية الاجتماعية -->
+                <div class="project-item">
+                    <h4>حملة التوعية الاجتماعية</h4>
+                    <p class="year">2022</p>
+                    <p>
+                        تصميم وإدارة حملة توعوية حول موضوع مهم، وصلت إلى أكثر من 50 ألف شخص.
+                    </p>
+                    <a href="{% static 'Marketer/pdf/target_audience_plan.pdf' %}" class="project-link" target="_blank" download>تحميل الخطة</a>
+                </div>
+
+                <div class="project-item">
+                    <h4>تطوير استراتيجية تسويقية شاملة</h4>
+                    <p class="year">2022</p>
+                    <p>
+                        وضع خطة تسويقية متكاملة لشركة ناشئة من البداية إلى التنفيذ والتقييم.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 جميع الحقوق محفوظة | مديرة حملات تسويقية</p>
+    </footer>
+</body>
+</html>

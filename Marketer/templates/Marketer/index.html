@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبذة عني | م. عبير الشيخ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'Marketer/css/feminine-style.css' %}">
+
+    <style>
+        .contact-area {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #e0c3fc;
+        }
+        .contact-area h3 {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none; /* إزالة الحدود */
+        }
+        .btn-social:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-facebook { background-color: #1877F2; }
+        .btn-email { background-color: #EA4335; }
+        
+        /* 2. تنسيق الأيقونات الجديدة */
+        .btn-social i {
+            font-size: 1.2rem; /* حجم الأيقونة */
+            color: white;      /* لون الأيقونة */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="{% url 'index' %}" class="active-link">الرئيسية</a></li>
+                <li><a href="{% url 'education' %}">التعليم والشهادات</a></li>
+                <li><a href="{% url 'projects' %}">المشاريع</a></li>
+                <li><a href="{% url 'certificates1' %}">الشهادات المهنية 1</a></li>
+                <li><a href="{% url 'certificates2' %}">الشهادات المهنية 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <section class="profile-section">
+            <article class="profile-card">
+                <span class="flower-decoration flower-top-left">🌹</span>
+                <span class="flower-decoration flower-top-right">🌸</span>
+                <span class="flower-decoration flower-bottom-left">🌷</span>
+                <span class="flower-decoration flower-bottom-right">🌼</span>
+                
+                <div class="img-container">
+                    <img src="{% static 'Marketer/images/profile.jpg' %}" alt="صورة م. عبير الشيخ" onerror="this.src='https://via.placeholder.com/160/d8547e/faf7f5?text=عبير'">
+                </div>
+                
+                <h2>م. عبير الشيخ</h2>
+                <span class="job-title">مديرة حملات تسويقية | مهندسة</span>
+                
+                <p class="bio-text">
+                    لدي خبرة واسعة في التسويق الرقمي والتقليدي وتحليل البيانات. 
+                    أستخدم الإبداع والاستراتيجيات المدروسة لجذب العملاء وتحقيق أهداف النمو ✅.
+                </p>
+
+                <div class="contact-area">
+                    <h3>تواصل معي</h3>
+                    <div class="social-buttons">
+                        <a href="https://wa.me/249100564775" target="_blank" class="btn-social btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>واتساب</span>
+                        </a>
+
+                        <a href="https://www.facebook.com/abeer.elshikh.859881" target="_blank" class="btn-social btn-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>فيسبوك</span>
+                        </a>
+
+                        <a href="mailto:abeerelshikh27@gmail.com" class="btn-social btn-email">
+                            <i class="fas fa-envelope"></i>
+                            <span>إيميل</span>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 م. عبير الشيخ. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
